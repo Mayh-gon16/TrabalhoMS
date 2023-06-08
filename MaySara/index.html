@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="has-background-danger-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Gerador de Número Aleatório</title>
+</head>
+<body class="p-4 has-text-white">
+    <div class="p-5">
+        <p id="botao" class="button columns is-centered ">Aperte aqui para gerar 6 números aleatórios</p>
+    </div>
+    <p id="numeros" class="has-text-centered"> </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="">
+        <a href="sobre.html" class="button ">Sobre nós</a>
+    </div>
+</body>
+<script>
+    var numero = [];
+    var historico = [];
+
+    $('#botao').click(function(){
+
+    var result = document.querySelector('#numeros');
+    
+    do{
+        ale = Math.floor(Math.random() * 100) + 1;
+        if ($.inArray(ale, numero) === -1){
+            numero.push(ale);  
+        }
+    
+    }while(numero.length < 6)
+
+        result.innerHTML += "<p>"+numero+"</p>";
+
+        historico.push(numero);
+        numero = [];
+});
+
+</script>
+</html>
